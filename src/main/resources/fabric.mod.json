@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "cwlib",
+  "version": "${version}",
+  "name": "CobWebsLibrary",
+  "description": "",
+  "authors": [
+    "NitkaNikita"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/cwlib/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.cobweb.fabric.cwlib.client.CwlibClient"
+    ],
+    "main": [
+      "me.cobweb.fabric.cwlib.Cwlib"
+    ]
+  },
+  "mixins": [
+    "cwlib.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.12",
+    "fabric": "*",
+    "minecraft": "1.19.3"
+  }
+}
