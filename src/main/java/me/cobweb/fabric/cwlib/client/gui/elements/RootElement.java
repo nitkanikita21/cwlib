@@ -18,7 +18,7 @@ import java.util.stream.Stream;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class RootElement implements Element, Drawable, Container<RootElement>, Customizible<RootElement> {
     final List<Element> children = new ArrayList<>();
-    private final LayoutContext layout;
+    final LayoutContext ctx;
     int id = 0;
     @Getter
     Flex flex;
@@ -26,7 +26,7 @@ public class RootElement implements Element, Drawable, Container<RootElement>, C
     public RootElement(LayoutContext ctx, Flex flex) {
         id = ctx.item();
         this.flex = flex;
-        layout = ctx;
+        this.ctx = ctx;
     }
 
     @Override
@@ -38,7 +38,7 @@ public class RootElement implements Element, Drawable, Container<RootElement>, C
     public RootElement addChildren(Element... child) {
         for (Element element : child) {
             if (element instanceof Prefab) {
-                ((Prefab) element).build(this, layout);
+                ((Prefab) element).build(this, ctx);
             } else {
                 element.setParent(this);
             }
