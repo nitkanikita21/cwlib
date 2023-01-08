@@ -10,7 +10,7 @@ import me.cobweb.fabric.cwlib.client.gui.utils.RectUtils;
 import java.util.Objects;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public abstract class BaseClickableElement<T extends BaseClickableElement> extends BaseElement<T> implements Drawable {
+public abstract class BaseClickableElement<T extends BaseClickableElement<?>> extends BaseElement<T> implements Drawable {
 
     @Getter
     MouseState state = MouseState.NONE;

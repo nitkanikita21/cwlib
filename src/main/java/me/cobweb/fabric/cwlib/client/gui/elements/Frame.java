@@ -32,13 +32,13 @@ public class Frame extends BaseElement<Frame> implements Drawable, Customizible<
     @Override
     public Frame addChildren(Element... child) {
         for (Element element : child) {
-            if (element instanceof Prefab<?>) {
-                ((Prefab) element).putItems(this, layout);
+            if (element instanceof Prefab) {
+                ((Prefab) element).build(this, layout);
             } else {
                 element.setParent(this);
             }
         }
-        children.addAll(Stream.of(child).filter(element -> !(element instanceof Prefab<?>)).toList());
+        children.addAll(Stream.of(child).filter(element -> !(element instanceof Prefab)).toList());
         return this;
     }
 

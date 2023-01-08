@@ -4,7 +4,7 @@ import io.github.layout.LayoutContext;
 import me.cobweb.fabric.cwlib.client.gui.api.utils.Flex;
 import me.cobweb.fabric.cwlib.client.gui.utils.GuiContext;
 
-public abstract class BaseElement<T extends BaseElement> implements Element{
+public abstract class BaseElement<T extends BaseElement<?>> implements Element{
     protected boolean visible = true;
     protected boolean enabled = true;
     protected Flex flex = new Flex();

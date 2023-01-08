@@ -1,56 +1,50 @@
-package me.cobweb.fabric.cwlib.client.gui.elements;
+package me.cobweb.fabric.cwlib.client.gui.api;
 
 import io.github.layout.LayoutContext;
-import me.cobweb.fabric.cwlib.client.gui.api.Container;
-import me.cobweb.fabric.cwlib.client.gui.api.Element;
-import me.cobweb.fabric.cwlib.client.gui.api.Prefab;
+import lombok.Getter;
 import me.cobweb.fabric.cwlib.client.gui.api.utils.Flex;
 import me.cobweb.fabric.cwlib.client.gui.utils.GuiContext;
 import org.jetbrains.annotations.Nullable;
 
-public class SimplePrefab implements Element, Prefab<SimplePrefab> {
-    PrefabInitializer initializer;
-    @Override
-    public void putItems(Container<?> container, LayoutContext ctx) {
-        if(initializer == null)return;
-        initializer.build(container, ctx);
+public abstract class BasePrefab<T extends BasePrefab<?, ?>, D> implements Prefab, Element{
+    @Getter
+    private D data;
+    public T data(D data) {
+        this.data = data;
+        return (T) this;
     }
 
     @Override
-    public SimplePrefab initPrefab(PrefabInitializer initializer) {
-        this.initializer = initializer;
-        return this;
-    }
-
+    public abstract void build(Container<?> container, LayoutContext ctx);
 
     @Override
     public boolean isVisible(GuiContext ctx) {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isEnabled(GuiContext ctx) {
-        return true;
+        return false;
     }
 
     @Override
     public boolean mouseClicked(GuiContext ctx) {
-        return true;
+        return false;
     }
 
     @Override
     public boolean mouseScrolled(GuiContext ctx) {
-        return true;
+        return false;
     }
 
     @Override
     public boolean mouseReleased(GuiContext ctx) {
-        return true;
+        return false;
     }
 
     @Override
     public boolean keyPressed(GuiContext ctx) {
-        return true;
+        return false;
     }
 
     @Override
