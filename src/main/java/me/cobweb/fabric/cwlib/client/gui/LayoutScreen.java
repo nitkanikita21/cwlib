@@ -4,6 +4,8 @@ import io.github.layout.LayoutBoxFlags;
 import io.github.layout.LayoutContext;
 import io.github.layout.LayoutFlags;
 import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import me.cobweb.fabric.cwlib.client.gui.api.utils.Flex;
 import me.cobweb.fabric.cwlib.client.gui.elements.*;
@@ -14,8 +16,12 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 
 public class LayoutScreen extends Screen {
-    protected final LayoutContext ctx = new LayoutContext();
-    protected final RootElement root = new RootElement(ctx,
+    @Setter
+    @Getter
+    protected LayoutContext ctx = new LayoutContext();
+    @Setter
+    @Getter
+    protected RootElement root = new RootElement(ctx,
             new Flex()
                     .behave(LayoutFlags.LAY_FILL)
                     .contain(LayoutBoxFlags.LAY_JUSTIFY | LayoutBoxFlags.LAY_ROW)
