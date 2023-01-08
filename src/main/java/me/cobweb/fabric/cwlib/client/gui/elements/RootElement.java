@@ -3,6 +3,7 @@ package me.cobweb.fabric.cwlib.client.gui.elements;
 import io.github.layout.LayoutContext;
 import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 import me.cobweb.fabric.cwlib.client.gui.api.*;
 import me.cobweb.fabric.cwlib.client.gui.api.utils.Flex;
@@ -21,6 +22,7 @@ public class RootElement implements Element, Drawable, Container<RootElement>, C
     final LayoutContext ctx;
     int id = 0;
     @Getter
+    @Setter
     Flex flex;
 
     public RootElement(LayoutContext ctx, Flex flex) {
