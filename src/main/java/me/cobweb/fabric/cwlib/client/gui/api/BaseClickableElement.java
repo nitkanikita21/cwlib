@@ -28,7 +28,7 @@ public abstract class BaseClickableElement<T extends BaseClickableElement<?>> ex
 
     @Override
     public boolean mouseReleased(GuiContext ctx) {
-        if (!RectUtils.checkInRect(ctx.mouseX, ctx.mouseY, getRect())) return false;
+        //if (!RectUtils.checkInRect(ctx.mouseX, ctx.mouseY, getRect())) return false;
         state = MouseState.NONE;
         return true;
     }

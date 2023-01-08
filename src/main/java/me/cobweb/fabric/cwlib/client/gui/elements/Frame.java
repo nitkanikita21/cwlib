@@ -17,11 +17,6 @@ public class Frame extends BaseElement<Frame> implements Drawable, Customizible<
 
     public Frame(LayoutContext ctx) {
         super(ctx);
-        flex.mLeft(2.5f)
-                .mRight(2.5f)
-                .mTop(2.5f)
-                .mBottom(2.5f)
-                .contain(LayoutBoxFlags.LAY_JUSTIFY);
     }
 
     @Override

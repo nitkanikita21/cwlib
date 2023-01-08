@@ -10,9 +10,9 @@ import org.intellij.lang.annotations.MagicConstant;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Flex {
     @MagicConstant(flagsFromClass = LayoutBoxFlags.class)
-    int contain = LayoutBoxFlags.LAY_START | LayoutBoxFlags.LAY_JUSTIFY;
+    int contain = 0;
     @MagicConstant(flagsFromClass = LayoutFlags.class)
-    int behave = LayoutFlags.LAY_HFILL | LayoutFlags.LAY_VFILL;
+    int behave = 0;
 
     float marginLeft = 0;
     float marginTop = 0;
