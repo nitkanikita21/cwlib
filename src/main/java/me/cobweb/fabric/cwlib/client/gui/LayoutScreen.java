@@ -15,7 +15,6 @@ import net.minecraft.text.Text;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class LayoutScreen extends Screen {
-
     final LayoutContext ctx = new LayoutContext();
     final RootElement root = new RootElement(ctx,
             new Flex()
@@ -23,30 +22,8 @@ public class LayoutScreen extends Screen {
                     .contain(LayoutBoxFlags.LAY_JUSTIFY | LayoutBoxFlags.LAY_ROW)
     );
 
-    final SimplePrefab testPrefab = new SimplePrefab().initPrefab((container, context) -> {
-        container.addChildren(
-                new Test(context),
-                new Test(context),
-                new TestClickable(context)
-        );
-    });
-
     public LayoutScreen() {
         super(Text.empty());
-
-        root.addChildren(
-                new Frame(ctx).addChildren(
-                        new Test(ctx)
-                ),
-                new Frame(ctx)
-                        .flex(flex -> {
-                            flex.contain(LayoutBoxFlags.LAY_COLUMN);
-                        }).addChildren(
-                                testPrefab
-                        )
-        );
-
-
     }
 
 
